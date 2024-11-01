@@ -4,6 +4,6 @@ Este código consiste em validar o CPF (Cadastro de Pessoa Física) de um usuár
 
 ## Como um CPF é validado?
 
-Segundo o site: [https://www.macoratti.net/alg_cpf.htm](https://), o cpf possui algumas etapas de validação, que consistem em:
+Segundo o site: [https://www.macoratti.net/alg_cpf.htm](https://www.macoratti.net/alg_cpf.htm), o cpf possui algumas etapas de validação, que consistem em:
 
 ### Cálculo do primeiro dígito
