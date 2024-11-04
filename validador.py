@@ -44,23 +44,30 @@ def validador(cpf: str):
         multiplicadorAuxiliar += 1
         somaNumeros += listaAux[i]
 
-    calcularDoisUltimosDigitos(listNumerosCpf, listaAux, somaNumeros) # Lista com cpf splitado, lista com os valores somados, soma total
+    primeiroDigito = calcularDigito(somaNumeros)
+    if listNumerosCpf[9] != primeiroDigito:
+        print("O cpf é inválido")
+    if listNumerosCpf[10] != segundoDigito:
+        print("O cpf é inválido")
+    
 
+    segundoDigito = calcularDigito(somaNumeros)
     return 1
 
-def calcularDoisUltimosDigitos(listNumerosCpf: str, listaAux: list, somaNumeros: int):
+# Calcula os dois últimos dígitos
+def calcularDigito(somaNumeros: int):
 
     validadoresUltimosDigitos = [] # Lista que vai guardar o resultado da divisão e o resto
-    ultimosDigitos = [] # Últimos dígitos do cpf (na ordem normal)
+    digito = 0 # Últimos dígitos do cpf (na ordem normal)
 
     validadoresUltimosDigitos[0] = somaNumeros / 11   # Valor da divisão (divisão por 11 porque é o tamanho padrão do cpf)
     validadoresUltimosDigitos[1] = somaNumeros % 11   # Resto da divisão 
     
     if validadoresUltimosDigitos[1] < 2:
-        ultimosDigitos[0] = 0
+        digito = 0
     else:
-        ultimosDigitos[0] = 11 - validadoresUltimosDigitos[1]
+        digito = 11 - validadoresUltimosDigitos[1]
 
-    return 
+    return digito
        
 main()
